@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Form Biodata</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="form-container">
+        <h2>BIODATA SISWA</h2>
+        <p class="form-instruction">Silakan isi seluruh formulir dengan benar. Semua kolom wajib diisi.</p>
+
+        <form id="biodataForm" onsubmit="simpankuy(event)">
+            <label class="form-group" for="nisn">NISN:
+                <input id="nisn" type="text" placeholder="Masukkan ID" inputmode="numeric" pattern="[0-9]*" maxlength="10" oninput="batasiNisn(this)" required>
+            </label>
+            <label class="form-group" for="nama">Nama:
+                <input id="nama" type="text" placeholder="Name" required>
+            </label>
+            <label class="form-group" for="tempat_lahir">Tempat Lahir:
+                <input id="tempat_lahir" type="text" placeholder="Kota kelahiran" required>
+            </label>
+            <label class="form-group" for="tanggal_lahir">Tanggal Lahir:
+                <input id="tanggal_lahir" type="date" required>
+            </label>
+            <div class="form-group">
+                <label>Jenis Kelamin:</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="gender" value="Laki-laki" required> Laki-laki</label>
+                    <label><input type="radio" name="gender" value="Perempuan"> Perempuan</label>
+                    <label><input type="radio" name="gender" value="Boti"> Boti</label>
+                </div>
+            </div>
+            <label class="form-group" for="berat">Berat Badan (kg):
+                <input id="berat" type="number" placeholder="Contoh: 66.23" step="0.01" required>
+            </label>
+            <label class="form-group" for="tinggi">Tinggi Badan (cm):
+                <input id="tinggi" type="number" placeholder="Contoh: 173.75" step="0.01" required>
+            </label>
+            <label class="form-group" for="agama">Agama:
+                <select id="agama" required>
+                    <option value="">-- Pilih Agama --</option>
+                    <option>Islam</option><option>Kristen</option><option>Katolik</option>
+                    <option>Hindu</option><option>Buddha</option><option>Konghucu</option><option>Kepercayaan</option>
+                </select>
+            </label>
+            <label class="form-group" for="jurusan">Jurusan:
+                <select id="jurusan" required>
+                    <option value="">-- Pilih Jurusan --</option>
+                    <option>PPLG</option><option>TJKT</option><option>TSM</option><option>TO</option><option>TEI</option>
+                </select>
+            </label>
+            <label class="form-group" for="no_hp">No. HP:
+                <input id="no_hp" type="text" oninput="batasiHp(this)" maxlength="13" placeholder="08xxxxxxxxxx" required>
+            </label>
+            <label class="form-group" for="alamat">Alamat:
+                <textarea id="alamat" rows="3" placeholder="Alamat lengkap" required></textarea>
+            </label>
+            <div class="form-group">
+                <label>Hobi:</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="hobi" value="Coding"> Coding</label>
+                    <label><input type="checkbox" name="hobi" value="Olahraga"> Olahraga</label>
+                    <label><input type="checkbox" name="hobi" value="Musik"> Musik</label>
+                    <label><input type="checkbox" name="hobi" value="Scroll TikTok"> Scroll TikTok</label>
+                    <label><input type="checkbox" name="hobi" value="Rebahan"> Rebahan</label>
+                </div>
+            </div>
+            <label class="form-group" for="email">Email:
+                <input id="email" type="email" placeholder="email@domain.com" required>
+            </label>
+            <label class="form-group" for="password">Password:
+                <input id="password" type="password" placeholder="••••••••" required>
+            </label>
+            <label class="form-group" for="foto">Foto:
+                <input id="foto" type="file" accept="image/*" required>
+            </label>
+            <button type="submit" class="btn-submit">simpankuy</button>
+        </form>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
